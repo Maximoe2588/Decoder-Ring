@@ -16,6 +16,7 @@ const polybiusModule = (function () {
  if (inputArray[i] == '00') {
    message += ' ';
  } else {
+ if (!cipherArray.includes(inputArray[i])) return false;
  let alphabetIndex = cipherArray.indexOf(Number(inputArray[i]))
  message += decodingAlphabet[alphabetIndex]
  }
@@ -23,7 +24,7 @@ const polybiusModule = (function () {
  return message
  }
   
-   
+ 
  function encoder (input) {
  let newInput = input.toLowerCase();
  let message = '';
