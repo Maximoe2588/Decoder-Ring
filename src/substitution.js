@@ -4,8 +4,18 @@
 // of the anonymous function on line 6
 
 const substitutionModule = (function () {
-  // you can add any code you want within this function scope
+  let alphabet = 'abcdefghijklmnopqrstuvwxyz'
+  let transposed = 'xoyqmcgrukswaflnthdjpzibev'
 
+  function encode (input) {
+    let message = '';
+    for (let i = 0; i < input.length; i++) {
+      let index = alphabet.indexOf(input[i]);
+      message += transposed.index
+    }
+  }
+  
+  
   function substitution(input, alphabet, encode = true) {
     // your solution code here
   }
