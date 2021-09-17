@@ -1,5 +1,5 @@
-const expect = require("chai").expect;
-const substitution = require("../src/substitution");
+const {expect} = require("chai");
+const {substitution} = require("../src/substitution");
 
 describe ("substitution cipher function", () => {
 
@@ -9,7 +9,7 @@ describe ("substitution cipher function", () => {
     });
 
     it ("correctly translates phrase with given alphabet", () => {
-        const actual = substition("abc", "xoyqmcgrukswaflnthdjpzibev");
+        const actual = substitution("abc", "xoyqmcgrukswaflnthdjpzibev");
         expect(actual).to.equal("xoy");
     });
 
@@ -25,13 +25,13 @@ describe ("substitution cipher function", () => {
     })
 
     it ("maintains spaces when decoding", () => {
-        const actual = substitution("x x", "xoyqmcgrukswaflnthdjpzibev")
+        const actual = substitution("x x", "xoyqmcgrukswaflnthdjpzibev", false)
         const expected = "a a";
         expect(actual).to.equal(expected)
     })
 
     it ("ignores capital letters", () => {
-        const actual = substitution("AA", "xoyqmcgrukswaflnthdjpzibev");
+        const actual = substitution("A A", "xoyqmcgrukswaflnthdjpzibev");
         const expected = "x x"
         expect(actual).to.equal(expected)
     })

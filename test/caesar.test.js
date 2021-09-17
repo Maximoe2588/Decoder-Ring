@@ -1,5 +1,6 @@
-const caesar = require("../src/caesar");
-const expect = require("chai").expect;
+const {expect} = require("chai");
+const {caesar} = require("../src/caesar");
+
 
 
 describe("caesar shift function", () => {
@@ -44,7 +45,7 @@ describe("caesar shift function", () => {
         const test = "b c!";
         const expected = "a b!"
         const actual = caesar(test, 1, false);
-        expect(actual).to.equal.apply(expected);
+        expect(actual).to.equal(expected);
     });
 
 });

@@ -1,5 +1,5 @@
-const expect = require("chai").expect;
-const polybius = require("../src/polybius");
+const {expect} = require("chai");
+const {polybius} = require("../src/polybius");
 
 describe("polybius square cipher", () => {
     
@@ -10,7 +10,7 @@ describe("polybius square cipher", () => {
     })
 
     it ("should translate 42 to (i/j)", () => {
-        const actual = polybius("42");
+        const actual = polybius("42", false);
         const expected = "(i/j)";
         expect(actual).to.equal(expected);
     })
@@ -28,7 +28,7 @@ describe("polybius square cipher", () => {
     })
 
     it ("maintains spaces when decoding", () => {
-        const actual = polybius("11 11");
+        const actual = polybius("11 11", false);
         const expected = "a a";
         expect(actual).to.equal(expected);
     })
